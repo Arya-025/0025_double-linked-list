@@ -2,34 +2,46 @@
 #include <string>
 using namespace std;
 
-class node
+class Node
 {
-public:
+    public :
     int nomMhs;
-    node *next;
-    node *prev;
+    Node *next;
+    Node *prev;
 };
 
-class DoubleLinkedList
+class Doublelinkedlist
 {
-private:
-    node *start;
+    private:
+        Node *START;
 
-public:
-    DoubleLinkedList()
-    {
-        start = NULL;
-    }
+    public:
+        Doublelinkedlist()
+        {
+            START = NULL;
+        }
 
-    void addnode() {
-        int nim;
-        string nim;
-        cout << "\nEnter the roll number of the student";
-        cin >> nim;
+        void addNode()
+        {
+            int nim;
+            string nm;
+            cout << "\nEnter the roll number of the student";
+            cin >> nim;
 
-        node *newmode = new node();
+            //step 1: Allcate memory for new node
+            Node *newNode = new Node();
 
-        newmode -> noMhs = nim;
-    }
+            // step 2: Assign falue to the data fields
+            newNode->nomMhs = nim;
 
+            // step 3: insert at beginning if list is empty or nim is smallest
+            if (START == NULL || nim <=START ->nomMhs)
+            {
+                if (START != NULL && nim == START ->nomMhs)
+                {
+                    cout << "\nDUplicate number not allowed" << endl;
+                    return;
+                }
+               
 };
+
