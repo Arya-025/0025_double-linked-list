@@ -29,7 +29,7 @@ public:
 
         node *newmode = new node();
 
-        
+        newmode -> noMhs = nim;
     }
 
 };
