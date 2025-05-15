@@ -181,6 +181,33 @@ class Doublelinkedlist
             }
         }
 
-       
+        void searchData()
+        {
+            if (START == NULL)
+            {
+                cout << "\nLList is empy" << endl;
+                return;
+            }
+
+            int rollNo;
+            cout << "\nEnter the roll number to search:";
+            cin >> rollNo;
+
+            Node *current = START;
+
+            //step 1 : 
+            while (current != NULL && current->nomMhs != rollNo)
+                current = current->next;
+            //step 2:output result
+            if (current == NULL)
+            {
+                cout << " Record not found\n";
+            }
+            else
+            {
+                cout << "Record founf\n";
+                cout << "Roll Number" << current->nomMhs << endl;
+            }
+         }
 };
 
